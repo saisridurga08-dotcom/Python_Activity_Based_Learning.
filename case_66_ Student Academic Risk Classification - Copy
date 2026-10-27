@@ -1,0 +1,17 @@
+
+def classify_risk(marks):
+    if marks < 0 or marks > 100:
+        return "Invalid Marks"
+    elif marks < 40:
+        return "High Risk"
+    elif marks < 60:
+        return "Medium Risk"
+    else:
+        return "Low Risk"
+
+
+print("Test Case 1:", classify_risk(25))
+print("Test Case 2:", classify_risk(45))
+print("Test Case 3:", classify_risk(75))
+print("Test Case 4:", classify_risk(60)) 
+print("Test Case 5:", classify_risk(90))

@@ -1,0 +1,17 @@
+
+def atm_transaction(balance, withdraw):
+    if withdraw <= 0:
+        return balance
+    elif withdraw > balance:
+        return balance
+    else:
+        balance = balance - withdraw
+        return balance
+
+ 
+print("Test Case 1:", atm_transaction(5000, 1000))
+print("Test Case 2:", atm_transaction(3000, 500))
+print("Test Case 3:", atm_transaction(2000, 2000))
+print("Test Case 4:", atm_transaction(1000, 1500))
+print("Test Case 5:", atm_transaction(4000, 0))
+

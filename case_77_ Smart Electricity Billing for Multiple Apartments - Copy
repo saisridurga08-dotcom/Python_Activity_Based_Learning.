@@ -1,0 +1,30 @@
+
+def electricity_bill(units):
+    if units <= 100:
+        return units * 2 + 50
+    elif units <= 200:
+        return 250 + (units - 100) * 3
+    else:
+        return 550 + (units - 200) * 5
+
+
+def apartment_bills(apartments):
+    for apartment, units in apartments:
+        bill = electricity_bill(units)
+        print("Apartment", apartment, "Units:", units, "Bill:", bill)
+
+
+print("Test Case 1:")
+apartment_bills([(1, 50)])
+
+print("\nTest Case 2:")
+apartment_bills([(2, 100)])
+
+print("\nTest Case 3:")
+apartment_bills([(3, 150)])
+
+print("\nTest Case 4:")
+apartment_bills([(4, 250)])
+
+print("\nTest Case 5:")
+apartment_bills([(5, 300)])

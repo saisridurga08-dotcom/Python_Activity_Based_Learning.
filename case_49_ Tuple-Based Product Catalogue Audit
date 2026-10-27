@@ -1,0 +1,27 @@
+
+def audit_products(products):
+    for product in products:
+        name, price, quantity = product
+        total = price * quantity
+        print(name, "Total Value:", total)
+
+
+# Test Case 1
+print("Test Case 1:")
+audit_products([("Pen", 10, 5)])
+
+# Test Case 2
+print("Test Case 2:")
+audit_products([("Book", 50, 4)])
+
+# Test Case 3
+print("Test Case 3:")
+audit_products([("Bag", 500, 2)])
+
+# Test Case 4
+print("Test Case 4:")
+audit_products([("Pencil", 5, 10)])
+
+# Test Case 5
+print("Test Case 5:")
+audit_products([("Bottle", 100, 3)])

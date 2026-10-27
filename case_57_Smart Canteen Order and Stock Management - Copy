@@ -1,0 +1,26 @@
+
+def canteen_order(stock, quantity, price):
+    if quantity <= stock:
+        stock = stock - quantity
+        total = quantity * price
+        print("Order Quantity:", quantity)
+        print("Total Bill:", total)
+        print("Remaining Stock:", stock)
+    else:
+        print("Insufficient Stock")
+
+
+print("Test Case 1:")
+canteen_order(100, 10, 20)
+
+print("\nTest Case 2:")
+canteen_order(50, 5, 30)
+
+print("\nTest Case 3:")
+canteen_order(20, 20, 15)
+
+print("\nTest Case 4:")
+canteen_order(10, 15, 25)
+
+print("\nTest Case 5:")
+canteen_order(40, 8, 10)

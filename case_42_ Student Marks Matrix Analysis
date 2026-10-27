@@ -1,0 +1,27 @@
+
+def analyze_marks(marks):
+    for i, student in enumerate(marks, start=1):
+        total = sum(student)
+        average = total / len(student)
+        print("Student", i, "Total:", total, "Average:", average)
+
+
+# Test Case 1
+print("Test Case 1:")
+analyze_marks([[80, 90, 70]])
+
+# Test Case 2
+print("Test Case 2:")
+analyze_marks([[60, 70, 80]])
+
+# Test Case 3
+print("Test Case 3:")
+analyze_marks([[100, 90, 80]])
+
+# Test Case 4
+print("Test Case 4:")
+analyze_marks([[50, 60, 70]])
+
+# Test Case 5
+print("Test Case 5:")
+analyze_marks([[40, 50, 60]])

@@ -1,0 +1,43 @@
+
+def analyze_records(records):
+    seen = []
+
+    for record in records:
+        parts = record.split("-")
+
+        if len(parts) != 3:
+            print(record, "Invalid Format")
+            continue
+
+        student_id, name, year = parts
+
+        if len(student_id) != 4 or not student_id.isdigit():
+            print(record, "Invalid ID")
+        elif len(name) < 2 or not name.isalpha():
+            print(record, "Invalid Name")
+        elif len(year) != 4 or not year.isdigit():
+            print(record, "Invalid Year")
+        elif student_id in seen:
+            print(record, "Duplicate ID")
+        else:
+            seen.append(student_id)
+            print(record, "Valid Record")
+
+
+print("Test Case 1:")
+analyze_records(["1234-Ravi-2026"])
+
+print("\nTest Case 2:")
+analyze_records(["12-Ravi-2026"])
+
+print("\nTest Case 3:")
+analyze_records(["1235-A-2026"])
+
+print("\nTest Case 4:")
+analyze_records(["1236-Sita-20A6"])
+
+print("\nTest Case 5:")
+analyze_records([
+    "1237-Raju-2026",
+    "1237-Kiran-2025"
+])

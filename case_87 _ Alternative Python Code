@@ -1,0 +1,46 @@
+
+def exam_analysis(key, answers):
+    n = len(answers)
+    q = len(key)
+
+    correct = [0] * q
+
+    for student in answers:
+        for i in range(q):
+            if student[i] == key[i]:
+                correct[i] += 1
+
+    missed = [n - x for x in correct]
+
+    print("Total Students:", n)
+
+    for i in range(q):
+        percentage = (correct[i] / n) * 100
+
+        print("\nQuestion:", i + 1)
+        print("Correct Answers:", correct[i])
+        print("Wrong Answers:", missed[i])
+        print("Success Rate:", percentage, "%")
+
+        if percentage >= 80:
+            print("Difficulty: Easy")
+        elif percentage >= 50:
+            print("Difficulty: Moderate")
+        else:
+            print("Difficulty: Difficult")
+
+    hardest = missed.index(max(missed)) + 1
+    print("\nMost Missed Question:", hardest)
+
+
+key = ["A", "B", "C", "D"]
+
+answers = [
+    ["A", "B", "C", "D"],
+    ["A", "C", "C", "D"],
+    ["B", "B", "A", "C"],
+    ["A", "B", "C", "A"],
+    ["B", "C", "D", "D"]
+]
+
+exam_analysis(key, answers)
